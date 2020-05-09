@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/ejfranco06/mind-tracker/static/css/main.27fd15f6.chunk.css",
-    "main.js": "/ejfranco06/mind-tracker/static/js/main.5e8673d5.chunk.js",
-    "main.js.map": "/ejfranco06/mind-tracker/static/js/main.5e8673d5.chunk.js.map",
+    "main.js": "/ejfranco06/mind-tracker/static/js/main.d3b56a14.chunk.js",
+    "main.js.map": "/ejfranco06/mind-tracker/static/js/main.d3b56a14.chunk.js.map",
     "runtime-main.js": "/ejfranco06/mind-tracker/static/js/runtime-main.ff509399.js",
     "runtime-main.js.map": "/ejfranco06/mind-tracker/static/js/runtime-main.ff509399.js.map",
     "static/js/2.8688b1f4.chunk.js": "/ejfranco06/mind-tracker/static/js/2.8688b1f4.chunk.js",
     "static/js/2.8688b1f4.chunk.js.map": "/ejfranco06/mind-tracker/static/js/2.8688b1f4.chunk.js.map",
     "index.html": "/ejfranco06/mind-tracker/index.html",
-    "precache-manifest.320c64ea35edddfe18b721fd40bd9b71.js": "/ejfranco06/mind-tracker/precache-manifest.320c64ea35edddfe18b721fd40bd9b71.js",
+    "precache-manifest.a4d0c26e3b3b1b8b13a30db033468d70.js": "/ejfranco06/mind-tracker/precache-manifest.a4d0c26e3b3b1b8b13a30db033468d70.js",
     "service-worker.js": "/ejfranco06/mind-tracker/service-worker.js",
     "static/css/main.27fd15f6.chunk.css.map": "/ejfranco06/mind-tracker/static/css/main.27fd15f6.chunk.css.map",
     "static/js/2.8688b1f4.chunk.js.LICENSE.txt": "/ejfranco06/mind-tracker/static/js/2.8688b1f4.chunk.js.LICENSE.txt"
@@ -17,6 +17,6 @@
     "static/js/runtime-main.ff509399.js",
     "static/js/2.8688b1f4.chunk.js",
     "static/css/main.27fd15f6.chunk.css",
-    "static/js/main.5e8673d5.chunk.js"
+    "static/js/main.d3b56a14.chunk.js"
   ]
 }
