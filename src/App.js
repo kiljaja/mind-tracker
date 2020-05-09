@@ -1,9 +1,11 @@
-import React from 'react';
-import './App.css';
+import React from "react";
+import "./App.css";
 
 function App() {
   return (
-    <h1>Mind Tracker</h1>
+    <div>
+      <h1>Mind Tracker</h1>
+    </div>
   );
 }
 
