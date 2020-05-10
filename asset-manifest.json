@@ -1,22 +1,23 @@
 {
   "files": {
-    "main.css": "/mind-tracker/static/css/main.54d98d3d.chunk.css",
-    "main.js": "/mind-tracker/static/js/main.89d1338f.chunk.js",
-    "main.js.map": "/mind-tracker/static/js/main.89d1338f.chunk.js.map",
+    "main.css": "/mind-tracker/static/css/main.5934ed3a.chunk.css",
+    "main.js": "/mind-tracker/static/js/main.415f9a1c.chunk.js",
+    "main.js.map": "/mind-tracker/static/js/main.415f9a1c.chunk.js.map",
     "runtime-main.js": "/mind-tracker/static/js/runtime-main.c0419002.js",
     "runtime-main.js.map": "/mind-tracker/static/js/runtime-main.c0419002.js.map",
-    "static/js/2.fde54107.chunk.js": "/mind-tracker/static/js/2.fde54107.chunk.js",
-    "static/js/2.fde54107.chunk.js.map": "/mind-tracker/static/js/2.fde54107.chunk.js.map",
+    "static/js/2.faec4781.chunk.js": "/mind-tracker/static/js/2.faec4781.chunk.js",
+    "static/js/2.faec4781.chunk.js.map": "/mind-tracker/static/js/2.faec4781.chunk.js.map",
     "index.html": "/mind-tracker/index.html",
-    "precache-manifest.420bf3c915f4e1561196626f4987c9e1.js": "/mind-tracker/precache-manifest.420bf3c915f4e1561196626f4987c9e1.js",
+    "precache-manifest.0523b3bf54298d644b2814521f18f122.js": "/mind-tracker/precache-manifest.0523b3bf54298d644b2814521f18f122.js",
     "service-worker.js": "/mind-tracker/service-worker.js",
-    "static/css/main.54d98d3d.chunk.css.map": "/mind-tracker/static/css/main.54d98d3d.chunk.css.map",
-    "static/js/2.fde54107.chunk.js.LICENSE.txt": "/mind-tracker/static/js/2.fde54107.chunk.js.LICENSE.txt"
+    "static/css/main.5934ed3a.chunk.css.map": "/mind-tracker/static/css/main.5934ed3a.chunk.css.map",
+    "static/js/2.faec4781.chunk.js.LICENSE.txt": "/mind-tracker/static/js/2.faec4781.chunk.js.LICENSE.txt",
+    "static/media/baby-groot-meditation.jpeg": "/mind-tracker/static/media/baby-groot-meditation.6f4dc16d.jpeg"
   },
   "entrypoints": [
     "static/js/runtime-main.c0419002.js",
-    "static/js/2.fde54107.chunk.js",
-    "static/css/main.54d98d3d.chunk.css",
-    "static/js/main.89d1338f.chunk.js"
+    "static/js/2.faec4781.chunk.js",
+    "static/css/main.5934ed3a.chunk.css",
+    "static/js/main.415f9a1c.chunk.js"
   ]
 }
