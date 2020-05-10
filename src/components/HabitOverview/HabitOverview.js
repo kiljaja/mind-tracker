@@ -13,7 +13,7 @@ import { addMeditation } from "../../apis/mind-tracker-api";
 
 import WeekReport from "../WeekReport/WeekReport";
 
-const HabitOverview = ({ habitEntries, userName }) => {
+const HabitOverview = ({ habitEntries, userName, refreshData }) => {
   //temp value
   const name = "Meditation";
 
@@ -35,7 +35,7 @@ const HabitOverview = ({ habitEntries, userName }) => {
 
   const handleHabitPost = async () => {
     const response = await addMeditation(userName);
-    if (response.ok) console.log("Post is success full");
+    if (response.ok) refreshData();
     else console.log("Post error");
   };
 

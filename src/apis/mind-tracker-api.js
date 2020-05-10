@@ -23,4 +23,39 @@ async function addMeditation(userName = "", date = null) {
   return fetch(url.toString(), options);
 }
 
-export { getAllMeditations, meditationApiUrl, addMeditation };
+
+// Delete a habit
+async function deleteMeditation(userName = "", id = -1) {
+  const url = new URL(meditationApiUrl);
+  const data = { userName, id };
+  const options = {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data),
+  };
+
+  return fetch(url.toString(), options);
+}
+
+// Update a habit
+async function updateMeditation(userName = "", id = -1, date = "") {
+  const url = new URL(meditationApiUrl);
+  const data = { userName, id, date };
+  console.log(data);
+  const options = {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data),
+  };
+
+  return fetch(url.toString(), options);
+}
+
+
+
+
+export { getAllMeditations, meditationApiUrl, addMeditation, deleteMeditation, updateMeditation };

@@ -8,8 +8,8 @@ function HeroHeader() {
       <div className="left-header">
         <h1>Mind Tracking</h1>
         <p>
-          Keep track of your meditation habit and see your progress simply click
-          on the meditation to add an entry
+          Keep track of your meditation habit and see your progress. Simply click
+          on the meditation panel to add an entry
         </p>
       </div>
       <div className="right-header">

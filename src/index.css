@@ -10,6 +10,8 @@
   --header-bg-gradient: radial-gradient(32.43% 193.19% at 51.84% 48.81%, #11A024 0%, #2A8333 100%);
   --header-font-color: #fff;
   --drop-shadow-value: 0 10px 20px rgba(0,0,0, 0.19), 0 6px 6px rgba(0,0,0,0.23);
+  --update-btn-bg-color: #F2CB05;
+  --delete-btn-bg-color: #D95204;
 }
 
 body {

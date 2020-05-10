@@ -17,10 +17,13 @@
   justify-content: center;
   padding: 2em;
   height: 100%;
+  
 }
+
 
 .left-header h1{
   margin-bottom: .5em;
+  text-align: center;
 }
 
 .right-header{
@@ -30,4 +33,17 @@
 
 .brain-toon{
   object-fit: cover;
+  height: 100%;
+}
+
+
+
+@media only screen and (max-width: 500px) {
+  .hero-header{
+    grid-template-columns: 1fr;
+  }
+  .right-header{
+    display: none;
+  }
+
 }

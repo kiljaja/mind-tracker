@@ -39,4 +39,10 @@ const formatDates = (date) =>{
   return `${month}/${day}/${year}`;
 };
 
-export {getStartOfWeek, formatDates, createZeroHourDate, getEndOfWeek};
+// Format a string date yyyy-mm-dd to mm-day-yyyy 
+const formatStringDate = (date = "") =>{
+  const [year, month, day] = date.split("-");
+  return `${month}-${day}-${year}`;
+}
+
+export {getStartOfWeek, formatDates, createZeroHourDate, getEndOfWeek, formatStringDate};
