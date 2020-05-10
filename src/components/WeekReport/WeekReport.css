@@ -1,0 +1,46 @@
+.week-report{
+  display: grid;
+  grid-template-columns: 1fr min-content;
+  min-width: 300px;
+  height: 100%;
+  gap: 5px;
+}
+
+.left-report{
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  /* text-align: center; */
+  justify-content: space-around;
+}
+
+.right-report{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  
+  padding-right: 10px;
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+.report-text{
+  font-weight: bold;
+}
+
+
+
+.day-dot{
+  height: 25px;
+  width: 25px;
+  background-color: var(--empty-day-dot-color);
+  border: 2px solid #000;
+  border-radius: 50%;
+  display: inline-block;
+  margin: .2em;
+}
+
+.day-dot-filled{
+  background-color: var(--filled-day-dot-color);
+}
