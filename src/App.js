@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from "react";
 import "./App.css";
+import HeroHeader from "./components/HeroHeader/HeroHeader";
 import HabitOverview from "./components/HabitOverview/HabitOverview";
 
 import {getAllMeditations} from "./apis/mind-tracker-api";
@@ -17,7 +18,7 @@ function App() {
 
   return (
     <>
-      <h1>Mind Tracker 7</h1>
+      <HeroHeader />
       <HabitOverview  habitEntries={meditationEntries} userName={userName}/>
     </>
   );

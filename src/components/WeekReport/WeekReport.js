@@ -1,10 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "./WeekReport.css";
 
 import {
-  getStartOfWeek,
-  formatDates,
-  getEndOfWeek,
   createZeroHourDate,
 } from "../../utils/helper-functions";
 

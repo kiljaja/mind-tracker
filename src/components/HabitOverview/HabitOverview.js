@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import "./HabitOverview.css";
 // TODO: abstract the logo image
 import logoImg from "../../images/baby-groot-meditation.jpeg";

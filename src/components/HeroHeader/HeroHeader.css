@@ -1,0 +1,33 @@
+.hero-header{
+  display: grid;
+  grid-template-columns: 35% 1fr;
+  grid-template-rows: 400px;
+  margin-bottom: 1em;
+  color: var(--header-font-color);
+  background: var(--header-bg-gradient);
+  height: 400px;
+  /* overflow: hidden; */
+  box-shadow: var(--drop-shadow-value);
+
+}
+
+.left-header{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 2em;
+  height: 100%;
+}
+
+.left-header h1{
+  margin-bottom: .5em;
+}
+
+.right-header{
+  position: relative;
+  overflow: hidden;
+}
+
+.brain-toon{
+  object-fit: cover;
+}
