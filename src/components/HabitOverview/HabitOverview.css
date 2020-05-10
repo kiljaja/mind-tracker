@@ -12,6 +12,10 @@
   max-width: 700px;
 }
 
+.habit-overview:active{
+  transform: scale(.98);
+}
+
 .logo-img-container{
 
 }
