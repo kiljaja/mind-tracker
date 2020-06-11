@@ -1,17 +1,27 @@
-import React from "react";
-import "./HabitEntryList.css";
+import React from 'react';
+import './HabitEntryList.css';
 
-import HabitEntry from "../HabitEntry/HabitEntry";
+import HabitEntry from '../HabitEntry/HabitEntry';
+import SkeletonHabitEntry from '../HabitEntry/SkeletonHabitEntry ';
 
-function HabitEntryList({
-  name = "Meditation",
-  habitEntries = [],
-  refreshData,
-}) {
-  const listOfEntries = habitEntries.map((entry) => (
-    <HabitEntry key={entry.id} refreshData={refreshData} entry={entry} />
-  ));
-  const date = "2020/05/10";
+function HabitEntryList({ habitEntries = [], refreshData }) {
+  const createSkeletonEntries = (num) => {
+    const listOfEntries = [];
+    for (let i = 0; i < num; i++) {
+      listOfEntries.push(<SkeletonHabitEntry key={i} />);
+    }
+    return listOfEntries;
+  };
+
+  const createEntries = () => {
+    return habitEntries.map((entry) => (
+      <HabitEntry key={entry.id} refreshData={refreshData} entry={entry} />
+    ));
+  };
+
+  const listOfEntries =
+    habitEntries.length <= 0 ? createSkeletonEntries(20) : createEntries();
+
   return (
     <div className="habit-entry-list">
       <h2>Habit list</h2>
