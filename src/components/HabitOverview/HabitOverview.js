@@ -1,22 +1,22 @@
-import React from "react";
-import "./HabitOverview.css";
+import React from 'react';
+import './HabitOverview.css';
 // TODO: abstract the logo image
-import logoImg from "../../images/baby-groot-meditation.jpeg";
+import logoImg from '../../images/baby-groot-meditation.jpeg';
 
 import {
   getStartOfWeek,
   getEndOfWeek,
   createZeroHourDate,
-} from "../../utils/helper-functions";
+} from '../../utils/helper-functions';
 
-import { addMeditation } from "../../apis/mind-tracker-api";
+import { addMeditation } from '../../apis/mind-tracker-api';
 
-import WeekReport from "../WeekReport/WeekReport";
+import WeekReport from '../WeekReport/WeekReport';
+import SkeletonWeekReport from '../WeekReport/SkeletonWeekReport';
 
-const HabitOverview = ({ habitEntries, userName, refreshData }) => {
+const HabitOverview = ({ habitEntries = [], userName, refreshData }) => {
   //temp value
-  const name = "Meditation";
-
+  const name = 'Meditation';
   // Get the habits that fall within this current week Monday-Sunday
   const getThisWeeksHabits = (habitEntries = []) => {
     const start = getStartOfWeek();
@@ -36,7 +36,7 @@ const HabitOverview = ({ habitEntries, userName, refreshData }) => {
   const handleHabitPost = async () => {
     const response = await addMeditation(userName);
     if (response.ok) refreshData();
-    else console.log("Post error");
+    else console.log('Post error');
   };
 
   const weekEntries = getThisWeeksHabits(habitEntries);
@@ -46,7 +46,12 @@ const HabitOverview = ({ habitEntries, userName, refreshData }) => {
       <div className="logo-img-container">
         <img className="logo-img" src={logoImg} alt={`${name} logo`} />
       </div>
-      <WeekReport weekEntries={weekEntries} name={name} />
+
+      {habitEntries.length <= 0 ? (
+        <SkeletonWeekReport weekEntries={weekEntries} name={name} />
+      ) : (
+        <WeekReport weekEntries={weekEntries} name={name} />
+      )}
     </button>
   );
 };
