@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/mind-tracker/static/css/main.ab1991e2.chunk.css",
-    "main.js": "/mind-tracker/static/js/main.e58156e4.chunk.js",
-    "main.js.map": "/mind-tracker/static/js/main.e58156e4.chunk.js.map",
+    "main.js": "/mind-tracker/static/js/main.dde39f74.chunk.js",
+    "main.js.map": "/mind-tracker/static/js/main.dde39f74.chunk.js.map",
     "runtime-main.js": "/mind-tracker/static/js/runtime-main.c0419002.js",
     "runtime-main.js.map": "/mind-tracker/static/js/runtime-main.c0419002.js.map",
     "static/js/2.b3eec6f8.chunk.js": "/mind-tracker/static/js/2.b3eec6f8.chunk.js",
     "static/js/2.b3eec6f8.chunk.js.map": "/mind-tracker/static/js/2.b3eec6f8.chunk.js.map",
     "index.html": "/mind-tracker/index.html",
-    "precache-manifest.b576b90d076c0b5da352edee2e596a1d.js": "/mind-tracker/precache-manifest.b576b90d076c0b5da352edee2e596a1d.js",
+    "precache-manifest.185ea3370099e040fb68dc2706299318.js": "/mind-tracker/precache-manifest.185ea3370099e040fb68dc2706299318.js",
     "service-worker.js": "/mind-tracker/service-worker.js",
     "static/css/main.ab1991e2.chunk.css.map": "/mind-tracker/static/css/main.ab1991e2.chunk.css.map",
     "static/js/2.b3eec6f8.chunk.js.LICENSE.txt": "/mind-tracker/static/js/2.b3eec6f8.chunk.js.LICENSE.txt",
@@ -19,6 +19,6 @@
     "static/js/runtime-main.c0419002.js",
     "static/js/2.b3eec6f8.chunk.js",
     "static/css/main.ab1991e2.chunk.css",
-    "static/js/main.e58156e4.chunk.js"
+    "static/js/main.dde39f74.chunk.js"
   ]
 }

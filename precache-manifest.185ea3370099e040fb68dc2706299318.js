@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "fd5489fda167a530354f6e92698714fd",
+    "revision": "aabfee09bb26d6baa83892e082846666",
     "url": "/mind-tracker/index.html"
   },
   {
-    "revision": "1c85e17916ac666b12b2",
+    "revision": "f88433cf76d6a6702268",
     "url": "/mind-tracker/static/css/main.ab1991e2.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/mind-tracker/static/js/2.b3eec6f8.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "1c85e17916ac666b12b2",
-    "url": "/mind-tracker/static/js/main.e58156e4.chunk.js"
+    "revision": "f88433cf76d6a6702268",
+    "url": "/mind-tracker/static/js/main.dde39f74.chunk.js"
   },
   {
     "revision": "b134b95c09755ae0c413",
