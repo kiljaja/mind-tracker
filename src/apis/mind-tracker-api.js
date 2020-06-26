@@ -1,4 +1,11 @@
 const meditationApiUrl = "https://mind-tracker-api.herokuapp.com/meditation";
+// =============== Testing Data ==================================
+async function getFakeMeditations(userName= ""){
+  
+} 
+
+
+
 
 // Get all meditations for a given user
 async function getAllMeditations(userName = "") {

@@ -4,6 +4,10 @@ import HeroHeader from "./components/HeroHeader/HeroHeader";
 import HabitOverview from "./components/HabitOverview/HabitOverview";
 import HabitEntryList from "./components/HabitEntryList/HabitEntryList";
 
+
+// Test not included in live site
+import {TestChart} from "./components/TestChart/TestChart";
+
 import { getAllMeditations } from "./apis/mind-tracker-api";
 
 function App() {
@@ -12,8 +16,8 @@ function App() {
 
   // Initial get all of all meditation entries
   useEffect(() => {
-    refreshData();
-  }, []);
+    getAllMeditations(userName).then((data) => setMeditationEntries(data));
+  }, [userName]);
 
   const refreshData = () => {
     getAllMeditations(userName).then((data) => setMeditationEntries(data));
@@ -24,6 +28,8 @@ function App() {
       <HeroHeader />
       <div className="weekly-overview-list">
         <h2>This weeks overview </h2>
+        <TestChart />
+
         <HabitOverview
           habitEntries={meditationEntries}
           userName={userName}
