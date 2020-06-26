@@ -5,6 +5,7 @@ import { createZeroHourDate } from '../../utils/helper-functions';
 
 import { Doughnut } from 'react-chartjs-2';
 import { Line } from 'react-chartjs-2';
+import {longMockHabitEntries} from '../../utils/mock-data';
 
 const mockData = [
   { date: '2020-06-17', userName: 'demoUser', entries: 13 },
@@ -17,7 +18,7 @@ const mockData = [
 ];
 
 export const TestChart = () => {
-  const newData = mockData.map((e) => ({
+  const newData = longMockHabitEntries.map((e) => ({
     t: createZeroHourDate(e.date),
     y: e.entries,
   }));
@@ -50,15 +51,16 @@ export const TestChart = () => {
       xAxes: [
         {
           type: 'time',
-          time: {
-            unit: 'day',
-          },
+          distribution: 'linear'
+          // time: {
+          //   unit: 'day',
+          // },
         },
       ],
 
       yAxes: [
         {
-          stacked: true,
+          stacked: false,
         },
       ],
     },
@@ -71,3 +73,10 @@ export const TestChart = () => {
     </div>
   );
 };
+
+
+
+
+
+
+// more mock data
