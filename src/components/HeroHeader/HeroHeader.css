@@ -6,7 +6,7 @@
   color: var(--header-font-color);
   background: var(--header-bg-gradient);
   height: 400px;
-  /* overflow: hidden; */
+  overflow: hidden;
   box-shadow: var(--drop-shadow-value);
 
 }

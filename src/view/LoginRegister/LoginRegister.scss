@@ -1,0 +1,128 @@
+.login-register {
+  $default-padding: 5px;
+  height: 100%;
+  background-color: #708090;
+  overflow-y: auto;
+
+  .intro {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+    height: 50%;
+    width: 100%;
+    padding: $default-padding * 2 $default-padding;
+    overflow: hidden;
+    background: var(--header-bg-gradient);
+    box-shadow: var(--drop-shadow-value);
+    h1 {
+      padding-top: 2em;
+      color: var(--header-font-color);
+    }
+    .brain-toon {
+      object-fit: contain;
+      height: 85%;
+      width: 85%;
+    }
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    max-width: 500px;
+    margin: $default-padding auto;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 0.8rem;
+    padding: $default-padding * 3;
+    background-color: white;
+    box-shadow: var(--drop-shadow-value);
+
+    .error-warning {
+      color: var(--warning-color);
+      padding: $default-padding;
+      padding-left: $default-padding * 2;
+    }
+
+    .header {
+      display: flex;
+      justify-content: center;
+
+      span {
+        margin: 0 0.5rem;
+        padding: $default-padding * 2;
+      }
+
+      h2 {
+        padding: $default-padding;
+        margin-bottom: 0.5rem;
+        border-bottom: 5px solid transparent;
+      }
+
+      .active {
+        border-bottom: 5px solid #708090;
+        position: relative;
+        animation: grow-highlight 0.5s normal;
+      }
+
+      @keyframes grow-highlight {
+        0% {
+          border-width: 0;
+        }
+
+        100% {
+          border-width: 5px;
+        }
+      }
+    }
+    input, .demo-btn {
+      height: 3rem;
+      margin: 0.5rem;
+      font-size: 1.2rem;
+      border-radius: 0.3rem;
+      padding: $default-padding;
+      padding-left: $default-padding * 2;
+      color: #333333;
+      background-color: #f7f7f7;
+      border: 1px solid #e6e6e6;
+    }
+
+    input:focus {
+      box-shadow: 0 0 0 2px #ffffff, 0 0 2px 4px #708090;
+      outline: 2px solid transparent;
+      outline-offset: 2px;
+    }
+
+    .btn {
+      font-size: 1.5rem;
+      border-radius: 0.5rem;
+      color: #fff;
+      background-color: #333333;
+    }
+
+    hr {
+      width: 95%;
+      margin: 1rem auto;
+    }
+
+    .swap-form-msg{
+      padding: $default-padding;
+    }
+
+    .swap-form-btn{
+      color: #5c6975;
+    }
+  }
+
+  @media only screen and (min-width: 780px) {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .intro {
+      width: 500px;
+      height: 100%;
+    }
+  }
+}
