@@ -60,7 +60,7 @@ export const AuthProvider: FC = ({ children }) => {
   };
 
   const isLoggedIn = (): boolean=>{
-    return token.trim().length === 0;
+    return token.trim().length > 0;
   }
 
   const clearAuthError = () => {
