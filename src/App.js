@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useAuth } from './context/auth-context';
 import "./App.css";
 import HeroHeader from "./components/HeroHeader/HeroHeader";
 import HabitOverview from "./components/HabitOverview/HabitOverview";
@@ -10,7 +11,9 @@ import {TestChart} from "./components/TestChart/TestChart";
 
 import { getAllMeditations } from "./apis/mind-tracker-api";
 
-function App() {
+const App = ()=> {
+  const { isLoggedIn } = useAuth();
+
   const [meditationEntries, setMeditationEntries] = useState([]);
   const [userName, setUserName] = useState("demoUser");
 
@@ -28,7 +31,7 @@ function App() {
       <HeroHeader />
       <div className="weekly-overview-list">
         <h2>This weeks overview </h2>
-        <TestChart />
+        {/* <TestChart /> */}
 
         <HabitOverview
           habitEntries={meditationEntries}
