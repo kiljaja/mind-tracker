@@ -9,7 +9,7 @@ interface DataI {
   password: string;
 }
 
-export const LoginRegister = () => {
+export const LoginRegister: FC = () => {
   const { login, register: authRegister, isLoggedIn, authError } = useAuth();
   const { register, handleSubmit, errors } = useForm();
   const [isLoginForm, setIsLoginForm] = useState(true);

@@ -1,8 +1,9 @@
 import React, { createContext, FC, useState } from 'react';
 
 // Test url for now
-// TODO: replace to hosted URL
-const API_URL = 'http://localhost:8000/';
+// TODO: replace to hosted UR
+const API_URL = 'https://mind-tracker-api-v2.herokuapp.com/'
+// const API_URL = 'http://localhost:8000/';
 
 interface AuthData {
   token: string;
@@ -53,7 +54,7 @@ export const AuthProvider: FC = ({ children }) => {
       });
       if (response.status !== 201) throw new Error('Unable register');
       const data = await response.json();
-      console.log(data);
+      setToken(data.token);
     } catch (err) {
       setAuthError(err);
     }
