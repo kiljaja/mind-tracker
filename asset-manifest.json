@@ -1,24 +1,25 @@
 {
   "files": {
-    "main.css": "/mind-tracker/static/css/main.ab1991e2.chunk.css",
-    "main.js": "/mind-tracker/static/js/main.dde39f74.chunk.js",
-    "main.js.map": "/mind-tracker/static/js/main.dde39f74.chunk.js.map",
+    "main.css": "/mind-tracker/static/css/main.c4b5ce7d.chunk.css",
+    "main.js": "/mind-tracker/static/js/main.e53799e0.chunk.js",
+    "main.js.map": "/mind-tracker/static/js/main.e53799e0.chunk.js.map",
     "runtime-main.js": "/mind-tracker/static/js/runtime-main.c0419002.js",
     "runtime-main.js.map": "/mind-tracker/static/js/runtime-main.c0419002.js.map",
-    "static/js/2.b3eec6f8.chunk.js": "/mind-tracker/static/js/2.b3eec6f8.chunk.js",
-    "static/js/2.b3eec6f8.chunk.js.map": "/mind-tracker/static/js/2.b3eec6f8.chunk.js.map",
+    "static/js/2.605bf85b.chunk.js": "/mind-tracker/static/js/2.605bf85b.chunk.js",
+    "static/js/2.605bf85b.chunk.js.map": "/mind-tracker/static/js/2.605bf85b.chunk.js.map",
     "index.html": "/mind-tracker/index.html",
-    "precache-manifest.185ea3370099e040fb68dc2706299318.js": "/mind-tracker/precache-manifest.185ea3370099e040fb68dc2706299318.js",
+    "precache-manifest.d66b90bbcc407a32a1aa8cc706816a94.js": "/mind-tracker/precache-manifest.d66b90bbcc407a32a1aa8cc706816a94.js",
     "service-worker.js": "/mind-tracker/service-worker.js",
-    "static/css/main.ab1991e2.chunk.css.map": "/mind-tracker/static/css/main.ab1991e2.chunk.css.map",
-    "static/js/2.b3eec6f8.chunk.js.LICENSE.txt": "/mind-tracker/static/js/2.b3eec6f8.chunk.js.LICENSE.txt",
+    "static/css/main.c4b5ce7d.chunk.css.map": "/mind-tracker/static/css/main.c4b5ce7d.chunk.css.map",
+    "static/js/2.605bf85b.chunk.js.LICENSE.txt": "/mind-tracker/static/js/2.605bf85b.chunk.js.LICENSE.txt",
     "static/media/baby-groot-meditation.jpeg": "/mind-tracker/static/media/baby-groot-meditation.6f4dc16d.jpeg",
+    "static/media/full-mind-toon.png": "/mind-tracker/static/media/full-mind-toon.a6bcf780.png",
     "static/media/mind-toon.png": "/mind-tracker/static/media/mind-toon.d86f34f6.png"
   },
   "entrypoints": [
     "static/js/runtime-main.c0419002.js",
-    "static/js/2.b3eec6f8.chunk.js",
-    "static/css/main.ab1991e2.chunk.css",
-    "static/js/main.dde39f74.chunk.js"
+    "static/js/2.605bf85b.chunk.js",
+    "static/css/main.c4b5ce7d.chunk.css",
+    "static/js/main.e53799e0.chunk.js"
   ]
 }
