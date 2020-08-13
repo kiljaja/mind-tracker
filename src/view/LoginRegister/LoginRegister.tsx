@@ -96,7 +96,7 @@ export const LoginRegister: FC = () => {
             ? `Don't have an account? `
             : `Already have an account? `}
           <span className="swap-form-btn" onClick={swapForm}>
-            {isLoginForm ? 'Login' : 'Register'}
+            {!isLoginForm ? 'Login' : 'Register'}
           </span>
         </p>
       </form>
