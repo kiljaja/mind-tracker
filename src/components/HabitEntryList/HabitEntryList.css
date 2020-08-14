@@ -37,7 +37,9 @@
 }
 
 .edit-panel{
-  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
   border: 2px solid black;
   border-top: none;
   border-radius: 0 0 10px 10px;
@@ -48,9 +50,15 @@
   width: 90%;
   font-size: .7em;
 }
+.change-inputs{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
 
 .edit-panel input{
-  margin: 0 .5em;
+  margin: 0.5em .5em;
+  
 }
 
 .entry-btn-group{
@@ -68,6 +76,7 @@
 }
 
 .entry-btn-update{
+  max-height: 30px;
   background-color: var(--update-btn-bg-color);
 }
 

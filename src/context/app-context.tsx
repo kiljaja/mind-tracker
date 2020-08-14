@@ -8,6 +8,7 @@ interface AppData {
   getAllMeditations(): void;
   addMeditation(date: moment.Moment | null): void;
   deleteMeditation(id: number): void;
+  updateMeditation(id: number, date: string, awarenessPoints: number): void
   appError: Error | null;
 }
 
@@ -100,6 +101,30 @@ export const AppProvider: FC = ({ children }) => {
     }
   };
 
+
+  const updateMeditation = async (id: number = -1, date: string = '', awarenessPoints: number ) => {
+    try {
+      const url = new URL(MEDITATION_API_URL);
+      const data = { id, postingDate: date, awarenessPoints };
+      const options = {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify(data),
+      };
+      const response = await fetch(url.toString(), options);
+      const json = await response.json();
+      if (response.status !== 200) throw new Error(json.message);
+      clearAuthError();
+    } catch (err) {
+      setAuthError(err);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   const clearAuthError = () => {
     if (appError) setAuthError(null);
   };
@@ -114,6 +139,7 @@ export const AppProvider: FC = ({ children }) => {
         getAllMeditations,
         addMeditation,
         deleteMeditation,
+        updateMeditation
       }}
     >
       {children}
