@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
-import { deleteMeditation } from '../../apis/mind-tracker-api';
 import { updateMeditation } from '../../apis/mind-tracker-api';
-import { formatStringDate } from '../../utils/helper-functions';
+import { useApp } from '../../context/app-context';
 
 import moment from 'moment';
 
 function HabitEntry({ name = 'Meditation', entry = {}, refreshData }) {
   const [showEditPanel, setShowEditPanel] = useState(false);
+  const { deleteMeditation } = useApp();
 
   const togglePanel = () => {
     setShowEditPanel(() => {
@@ -15,10 +15,8 @@ function HabitEntry({ name = 'Meditation', entry = {}, refreshData }) {
   };
 
   const handleDelete = async () => {
-    const { userName, id } = entry;
-    const response = await deleteMeditation(userName, id);
-    if (response.ok) refreshData();
-    else console.log('Delete error');
+    await deleteMeditation(entry.id);
+    refreshData();
   };
 
   const date = moment(entry.postingDate).add(1, 'd').format('MM-DD-YYYY');
@@ -27,10 +25,10 @@ function HabitEntry({ name = 'Meditation', entry = {}, refreshData }) {
       <div className="habit-entry">
         <h3>{name}</h3>
         <div>
-        <p> Points: {entry.awarenessPoints} </p>
-        <p> {date} </p>
+          <p> Points: {entry.awarenessPoints} </p>
+          <p> {date} </p>
         </div>
-        
+
         <div className="entry-btn-group">
           <button className="entry-btn entry-btn-update" onClick={togglePanel}>
             edit

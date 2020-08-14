@@ -3,8 +3,10 @@ import './HabitEntryList.css';
 
 import HabitEntry from '../HabitEntry/HabitEntry';
 import SkeletonHabitEntry from '../HabitEntry/SkeletonHabitEntry ';
+import { useApp } from '../../context/app-context';
 
 function HabitEntryList({ habitEntries = [], refreshData }) {
+  const { isLoading } = useApp();
   const createSkeletonEntries = (num) => {
     const listOfEntries = [];
     for (let i = 0; i < num; i++) {
@@ -19,8 +21,7 @@ function HabitEntryList({ habitEntries = [], refreshData }) {
     ));
   };
 
-  const listOfEntries =
-    habitEntries.length <= 0 ? createSkeletonEntries(20) : createEntries();
+  const listOfEntries = isLoading ? createSkeletonEntries(20) : createEntries();
 
   return (
     <div className="habit-entry-list">
