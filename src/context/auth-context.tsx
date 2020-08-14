@@ -1,5 +1,4 @@
 import React, { createContext, FC, useState } from 'react';
-import moment from 'moment';
 
 // Test url for now
 // TODO: replace to hosted UR
@@ -34,9 +33,10 @@ export const AuthProvider: FC = ({ children }) => {
         },
         body: JSON.stringify({ username, password }),
       });
-      if (response.status !== 200) throw new Error('Unable to login');
-      const data = await response.json();
-      setToken(data.token);
+      const json = await response.json();
+      if (response.status !== 200) throw new Error(`Unable to login: ${json.message}`);
+      
+      setToken(json.token);
     } catch (err) {
       setAuthError(err);
     }
@@ -53,9 +53,9 @@ export const AuthProvider: FC = ({ children }) => {
         },
         body: JSON.stringify({ username, password }),
       });
-      if (response.status !== 201) throw new Error('Unable register');
-      const data = await response.json();
-      setToken(data.token);
+      const json = await response.json();
+      if (response.status !== 201) throw new Error(`Unable to register: ${json.message}`);
+      setToken(json.token);
     } catch (err) {
       setAuthError(err);
     }
