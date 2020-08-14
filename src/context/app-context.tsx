@@ -1,11 +1,13 @@
 import React, { createContext, FC, useState } from 'react';
 import { useAuth } from './auth-context';
 
+
 interface AppData {
   isLoading: boolean;
   setIsLoading: React.Dispatch<React.SetStateAction<boolean>>;
   meditations: Meditation[];
   getAllMeditations(): void;
+  addMeditation(date: moment.Moment | null): void;
   appError: Error | null;
 }
 
@@ -52,6 +54,29 @@ export const AppProvider: FC = ({ children }) => {
     }
   };
 
+  const addMeditation = async (date: moment.Moment | null = null) => {
+    try {
+      const url = new URL(MEDITATION_API_URL);
+      const data = { postingDate: date ? date?.format('YYYY-MM-DD') : '' };
+      const options = {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${token}`,
+        },
+        body: JSON.stringify(data),
+      };
+      const response = await fetch(url.toString(), options);
+      const json = await response.json();
+      if (response.status !== 201) throw new Error(json.message);
+      clearAuthError();
+    } catch (err) {
+      setAuthError(err);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   const clearAuthError = () => {
     if (appError) setAuthError(null);
   };
@@ -64,6 +89,7 @@ export const AppProvider: FC = ({ children }) => {
         setIsLoading,
         meditations,
         getAllMeditations,
+        addMeditation
       }}
     >
       {children}

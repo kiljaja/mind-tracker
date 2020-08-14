@@ -4,7 +4,6 @@ import './HabitOverview.css';
 import logoImg from '../../images/baby-groot-meditation.jpeg';
 import moment from 'moment';
 import { useApp } from '../../context/app-context';
-import { addMeditation } from '../../apis/mind-tracker-api';
 
 import WeekReport from '../WeekReport/WeekReport';
 import SkeletonWeekReport from '../WeekReport/SkeletonWeekReport';
@@ -15,7 +14,7 @@ const HabitOverview = ({
   refreshData,
   name = 'Meditation',
 }) => {
-  const { isLoading } = useApp();
+  const { isLoading, addMeditation } = useApp();
 
   const getThisWeeksHabits = (habitEntries = []) => {
     const start = moment().startOf('isoWeek');
@@ -31,9 +30,8 @@ const HabitOverview = ({
   };
 
   const handleHabitPost = async () => {
-    const response = await addMeditation(userName);
-    if (response.ok) refreshData();
-    else console.log('Post error');
+    await addMeditation();
+    refreshData();
   };
 
   const weekEntries = getThisWeeksHabits(habitEntries);
