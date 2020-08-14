@@ -16,7 +16,7 @@ export const AuthenticatedApp = () => {
   const [userName, setUserName] = useState('demoUser');
 
   // Initial get all of all meditation entries
-  useEffect(() => {
+  useEffect( () => {
     getAllMeditations();
   }, []);
 

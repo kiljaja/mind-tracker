@@ -2,32 +2,29 @@ import React from 'react';
 import './HabitOverview.css';
 // TODO: abstract the logo image
 import logoImg from '../../images/baby-groot-meditation.jpeg';
-
-import {
-  getStartOfWeek,
-  getEndOfWeek,
-  createZeroHourDate,
-} from '../../utils/helper-functions';
-
+import moment from 'moment';
+import { useApp } from '../../context/app-context';
 import { addMeditation } from '../../apis/mind-tracker-api';
 
 import WeekReport from '../WeekReport/WeekReport';
 import SkeletonWeekReport from '../WeekReport/SkeletonWeekReport';
 
-const HabitOverview = ({ habitEntries = [], userName, refreshData }) => {
-  //temp value
-  const name = 'Meditation';
-  // Get the habits that fall within this current week Monday-Sunday
-  const getThisWeeksHabits = (habitEntries = []) => {
-    const start = getStartOfWeek();
-    const end = getEndOfWeek();
+const HabitOverview = ({
+  habitEntries = [],
+  userName,
+  refreshData,
+  name = 'Meditation',
+}) => {
+  const { isLoading } = useApp();
 
+  const getThisWeeksHabits = (habitEntries = []) => {
+    const start = moment().startOf('isoWeek');
+    const end = moment().endOf('isoWeek');
+    // TODO: check back on why you add an extra day to entryData
+    // Maybe the way it is being saved in that database
     const weekEntries = habitEntries.filter((entry) => {
-      const entryDate = createZeroHourDate(entry.date);
-      return (
-        entryDate.getTime() >= start.getTime() &&
-        entryDate.getTime() <= end.getTime()
-      );
+      const entryDate = moment(entry.postingDate).add(1, 'd');
+      return entryDate.isBetween(start, end, undefined, '[]');
     });
 
     return weekEntries;
@@ -47,7 +44,7 @@ const HabitOverview = ({ habitEntries = [], userName, refreshData }) => {
         <img className="logo-img" src={logoImg} alt={`${name} logo`} />
       </div>
 
-      {habitEntries.length <= 0 ? (
+      {isLoading ? (
         <SkeletonWeekReport weekEntries={weekEntries} name={name} />
       ) : (
         <WeekReport weekEntries={weekEntries} name={name} />

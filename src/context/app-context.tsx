@@ -10,10 +10,10 @@ interface AppData {
 }
 
 interface Meditation {
-  id : string;
+  id: string;
   postingDate: string;
   username: string;
-  awarenessPoints: number
+  awarenessPoints: number;
 }
 
 const MEDITATION_API_URL =
@@ -30,6 +30,7 @@ export const AppProvider: FC = ({ children }) => {
   const [meditations, setMeditations] = useState([]);
 
   const getAllMeditations = async () => {
+    setIsLoading(true);
     try {
       const url = new URL(MEDITATION_API_URL);
       const options = {
@@ -46,6 +47,8 @@ export const AppProvider: FC = ({ children }) => {
       clearAuthError();
     } catch (err) {
       setAuthError(err);
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -55,7 +58,13 @@ export const AppProvider: FC = ({ children }) => {
 
   return (
     <AppContext.Provider
-      value={{ isLoading, appError, setIsLoading, meditations, getAllMeditations }}
+      value={{
+        isLoading,
+        appError,
+        setIsLoading,
+        meditations,
+        getAllMeditations,
+      }}
     >
       {children}
     </AppContext.Provider>
