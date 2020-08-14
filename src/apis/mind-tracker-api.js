@@ -1,4 +1,5 @@
 const meditationApiUrl = "https://mind-tracker-api.herokuapp.com/meditation";
+const meditationApiUrl2 = "https://mind-tracker-api-v2.herokuapp.com/meditation";
 // =============== Testing Data ==================================
 async function getFakeMeditations(userName= ""){
   
@@ -13,6 +14,18 @@ async function getAllMeditations(userName = "") {
   url.searchParams.append("userName", userName);
   const response = await fetch(url.toString());
   return response.json();
+}
+async function getAllMeditations2(token = "") {
+  const url = new URL(meditationApiUrl2);
+  url.searchParams.append("userName");
+  const options = {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  };
+
+  return fetch(url.toString(), options);
 }
 
 // Post a habit
