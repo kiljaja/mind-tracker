@@ -1,0 +1,21 @@
+.trend-chart {
+  position: relative;
+  $default-padding: 5px;
+  padding: $default-padding;
+  box-shadow: var(--drop-shadow-value);
+  text-align: center;
+  border-radius: 0.8rem;
+  margin: 1rem 0;
+  margin-bottom: 2rem;
+  // overflow: hidden;
+  width: 90%;
+  max-width: 700px;
+
+  h1 {
+    padding: $default-padding ;
+  }
+
+  .chart-container{
+    position: relative;
+  }
+}

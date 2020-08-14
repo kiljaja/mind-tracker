@@ -5,7 +5,7 @@ import moment from 'moment';
 
 function HabitEntry({ name = 'Meditation', entry = {}, refreshData }) {
   const [showEditPanel, setShowEditPanel] = useState(false);
-  const { deleteMeditation, updateMeditation } = useApp();
+  const { deleteMeditation } = useApp();
 
   const togglePanel = () => {
     setShowEditPanel(() => {

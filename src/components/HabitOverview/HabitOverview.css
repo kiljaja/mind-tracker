@@ -1,7 +1,7 @@
 .habit-overview{
   display: flex;
   align-items: center;
-  border: 2px solid #000;
+  border: none;
   border-radius: 16px;
   padding: .5em 1em;
   background-color: transparent;

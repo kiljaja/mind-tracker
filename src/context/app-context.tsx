@@ -12,7 +12,7 @@ interface AppData {
   appError: Error | null;
 }
 
-interface Meditation {
+export interface Meditation {
   id: string;
   postingDate: string;
   username: string;
