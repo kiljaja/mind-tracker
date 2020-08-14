@@ -1,10 +1,11 @@
-import React, { useState } from "react";
-import {deleteMeditation} from "../../apis/mind-tracker-api";
-import {updateMeditation} from "../../apis/mind-tracker-api";
-import {formatStringDate} from "../../utils/helper-functions";
+import React, { useState } from 'react';
+import { deleteMeditation } from '../../apis/mind-tracker-api';
+import { updateMeditation } from '../../apis/mind-tracker-api';
+import { formatStringDate } from '../../utils/helper-functions';
 
+import moment from 'moment';
 
-function HabitEntry({ name = "Meditation", entry = {}, refreshData}) {
+function HabitEntry({ name = 'Meditation', entry = {}, refreshData }) {
   const [showEditPanel, setShowEditPanel] = useState(false);
 
   const togglePanel = () => {
@@ -13,46 +14,61 @@ function HabitEntry({ name = "Meditation", entry = {}, refreshData}) {
     });
   };
 
-  const handleDelete = async ()=>{
-    const {userName, id} = entry;
+  const handleDelete = async () => {
+    const { userName, id } = entry;
     const response = await deleteMeditation(userName, id);
     if (response.ok) refreshData();
-    else console.log("Delete error");
-  }
+    else console.log('Delete error');
+  };
 
-  const date = formatStringDate(entry.date);
+  const date = moment(entry.postingDate).add(1, 'd').format('MM-DD-YYYY');
   return (
     <div className="habit-entry-container">
       <div className="habit-entry">
         <h3>{name}</h3>
+        <div>
+        <p> Points: {entry.awarenessPoints} </p>
         <p> {date} </p>
+        </div>
+        
         <div className="entry-btn-group">
           <button className="entry-btn entry-btn-update" onClick={togglePanel}>
             edit
           </button>
-          <button className="entry-btn entry-btn-delete" onClick={handleDelete}>delete</button>
+          <button className="entry-btn entry-btn-delete" onClick={handleDelete}>
+            delete
+          </button>
         </div>
       </div>
       {showEditPanel && (
-        <HabitEditPanel date={date} togglePanel={togglePanel} refreshData={refreshData} entry={entry} />
+        <HabitEditPanel
+          date={date}
+          togglePanel={togglePanel}
+          refreshData={refreshData}
+          entry={entry}
+        />
       )}
     </div>
   );
 }
 
-function HabitEditPanel({ date = "2020-01-01", togglePanel, entry ={}, refreshData }) {
+function HabitEditPanel({
+  date = '2020-01-01',
+  togglePanel,
+  entry = {},
+  refreshData,
+}) {
   const [newDate, setNewDate] = useState(date);
   const handleChange = (evt) => {
     setNewDate(evt.target.value);
   };
 
-  const handleUpdate = async ()  => {
+  const handleUpdate = async () => {
     togglePanel();
-    const {userName, id} = entry;
+    const { userName, id } = entry;
     const response = await updateMeditation(userName, id, newDate);
     if (response.ok) refreshData();
-    else console.log("Update error");
-
+    else console.log('Update error');
   };
 
   return (
