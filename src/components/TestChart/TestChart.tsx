@@ -60,6 +60,12 @@ export const TestChart: FC<ChartData> = ({ habitEntries }) => {
           },
         },
       ],
+      yAxes:[{
+        ticks:{
+          beginAtZero: true,
+          stepSize: 1
+        }
+      }]
     },
     layout: {
       padding: {
