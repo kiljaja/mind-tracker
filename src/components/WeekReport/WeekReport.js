@@ -1,14 +1,12 @@
-import React from "react";
-import "./WeekReport.css";
+import React from 'react';
+import './WeekReport.css';
+import moment from 'moment';
 
-import {
-  createZeroHourDate,
-} from "../../utils/helper-functions";
-
-function WeekReport({ weekEntries = [], name = "habit" }) {
+function WeekReport({ weekEntries = [], name = 'habit' }) {
   // get this weeks habit map with a counter for days at least one entry was made
   const getWeekHabitMap = (weekEntries = []) => {
     const weekHabitMap = {
+      awarenessPoints: 0,
       count: 0,
       monday: false,
       tuesday: false,
@@ -20,50 +18,45 @@ function WeekReport({ weekEntries = [], name = "habit" }) {
     };
 
     weekEntries.forEach((entry) => {
-      const date = createZeroHourDate(entry.date);
-      const day = date.getUTCDay();
+      const date = moment(entry.postingDate).add(1, 'd');
+      const day = date.isoWeekday();
+      weekHabitMap.count++;
+      weekHabitMap.awarenessPoints += entry.awarenessPoints;
 
       switch (day) {
-        case 0:
-          if (!weekHabitMap.sunday) {
-            weekHabitMap.sunday = true;
-            weekHabitMap.count++;
-          }
-          break;
         case 1:
           if (!weekHabitMap.monday) {
             weekHabitMap.monday = true;
-            weekHabitMap.count++;
           }
           break;
         case 2:
           if (!weekHabitMap.tuesday) {
             weekHabitMap.tuesday = true;
-            weekHabitMap.count++;
           }
           break;
         case 3:
           if (!weekHabitMap.wednesday) {
             weekHabitMap.wednesday = true;
-            weekHabitMap.count++;
           }
           break;
         case 4:
           if (!weekHabitMap.thursday) {
             weekHabitMap.thursday = true;
-            weekHabitMap.count++;
           }
           break;
         case 5:
           if (!weekHabitMap.friday) {
             weekHabitMap.friday = true;
-            weekHabitMap.count++;
           }
           break;
         case 6:
           if (!weekHabitMap.saturday) {
             weekHabitMap.saturday = true;
-            weekHabitMap.count++;
+          }
+          break;
+        case 7:
+          if (!weekHabitMap.sunday) {
+            weekHabitMap.sunday = true;
           }
           break;
         default:
@@ -82,6 +75,7 @@ function WeekReport({ weekEntries = [], name = "habit" }) {
     saturday,
     sunday,
     count,
+    awarenessPoints,
   } = getWeekHabitMap(weekEntries);
 
   return (
@@ -101,8 +95,8 @@ function WeekReport({ weekEntries = [], name = "habit" }) {
       </div>
 
       <div className="right-report">
-        <p>Total</p>
-        <p>{weekEntries.length}</p>
+        <p>Points</p>
+        <p>{awarenessPoints}</p>
       </div>
     </div>
   );
@@ -110,7 +104,7 @@ function WeekReport({ weekEntries = [], name = "habit" }) {
 
 const DayDot = ({ isGreen = false }) => {
   return (
-    <span className={`day-dot  ${isGreen ? "day-dot-filled" : ""} `}></span>
+    <span className={`day-dot  ${isGreen ? 'day-dot-filled' : ''} `}></span>
   );
 };
 
