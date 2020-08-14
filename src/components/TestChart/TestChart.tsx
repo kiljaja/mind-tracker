@@ -9,13 +9,21 @@ interface ChartData {
 }
 
 export const TestChart: FC<ChartData> = ({ habitEntries }) => {
+  const labelsX: string[] = [];
+  const dataY: number[] = [];
+  habitEntries.forEach((e) => {
+    labelsX.unshift(moment(e.postingDate).add(1, 'd').format('MM-DD'));
+    dataY.unshift(e.awarenessPoints);
+  });
+
+  //No Longer used due to missing first and last x axis label
   const newData = habitEntries.map((e: Meditation) => ({
-    t: moment(e.postingDate).add(1, 'd'),
+    t: moment(e.postingDate).add(1, 'd').toDate(),
     y: e.awarenessPoints,
   }));
 
   const data = {
-    // labels: labelsTest,
+    labels: labelsX,
     datasets: [
       {
         label: 'Meditation',
@@ -32,7 +40,7 @@ export const TestChart: FC<ChartData> = ({ habitEntries }) => {
         pointHoverBorderWidth: 2,
         pointRadius: 5,
         pointHitRadius: 10,
-        data: newData,
+        data: dataY,
       },
     ],
   };
@@ -42,9 +50,13 @@ export const TestChart: FC<ChartData> = ({ habitEntries }) => {
       xAxes: [
         {
           type: 'time',
-          distribution: 'linear',
           time: {
             unit: 'day',
+          },
+
+          ticks: {
+            labelOffset: 0,
+            padding: 5,
           },
         },
       ],
@@ -52,7 +64,7 @@ export const TestChart: FC<ChartData> = ({ habitEntries }) => {
     layout: {
       padding: {
         left: 5,
-        right: 20,
+        right: 5,
         top: 5,
         bottom: 5,
       },
@@ -72,5 +84,3 @@ export const TestChart: FC<ChartData> = ({ habitEntries }) => {
     </div>
   );
 };
-
-// more mock data
